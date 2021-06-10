@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="32dp">
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/str_peso"
+        android:textColor="@color/colorLabel"
+        android:textSize="24sp"
+        android:textStyle="bold"
+
+
+        />
+
+    <EditText
+        android:id="@+id/edit_peso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textSize="30sp"
+        android:textColor="#673AB7"
+        android:hint="@string/hint_peso"
+        android:layout_marginTop="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_altura"
+        android:textColor="@color/colorLabel"
+        android:textSize="24sp"
+        android:layout_marginTop="48dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/edit_altura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:textSize="30sp"
+        android:textColor="#673AB7"
+        android:hint="@string/hint_altura"
+        android:layout_marginBottom="48dp"
+        android:layout_marginTop="24dp"/>
+
+
+    <Button
+        android:id="@+id/button_calcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calcular"
+        android:textAllCaps="true"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:textSize="25sp"/>
+
+
+    <TextView
+        android:id="@+id/text_resultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="21"
+        android:layout_marginTop="85dp"
+        android:textSize="70sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        />
+</LinearLayout>

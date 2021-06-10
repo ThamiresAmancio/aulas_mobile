@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">IMC V2</string>
+    <string name="imc">IMC</string>
+    <string name="hint_meu_peso">Meu Peso</string>
+    <string name="hint_minha_altura">Minha altura</string>
+    <string name="button_calcular_meu_imc">Calcular meu IMC</string>
+</resources>

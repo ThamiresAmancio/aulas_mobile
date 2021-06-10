@@ -1,0 +1,11 @@
+
+<resources>
+    <string name="app_name">BMI Calcualor</string>
+    <string name="str_peso">Weight:</string>
+    <string name="str_altura">high:</string>
+    <string name="hint_peso">Peso do usuário,ex. 75.5</string>
+    <string name="hint_altura">Altura do usuário,ex. 1.76</string>
+    <string name="erro_peso">Weight is required!</string>
+    <string name="erro_altura">Hight is required</string>
+
+</resources>
