@@ -2,6 +2,7 @@ package br.senai.sp.jandira.imcapp20_a.dao
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import android.util.Log
 import org.jetbrains.anko.db.ManagedSQLiteOpenHelper
 
 const val DATABASE_NAME = "imc.db"
@@ -17,10 +18,9 @@ class ImcDataBase(context: Context) :
     }
 
     override fun onCreate(db: SQLiteDatabase) {
-
+        Log.i("XPTO","Abrir o onCreate")
         criarTabelaUsuario(db)
         criarTabelaBiometria(db)
-
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
