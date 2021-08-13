@@ -79,6 +79,7 @@
         android:background="@drawable/edit_text_login_background"
         android:padding="16dp"
         android:hint="E-mail"
+        android:inputType="textEmailAddress"
         android:drawableStart="@drawable/ic_email_24"
         android:drawableTint="@color/colorAccent"
         android:drawablePadding="16dp"/>
@@ -97,7 +98,8 @@
         android:hint="Senha"
         android:drawableStart="@drawable/ic_lock_24"
         android:drawableTint="@color/colorAccent"
-        android:drawablePadding="16dp"/>
+        android:drawablePadding="16dp"
+        android:maxLines="1"/>
 
     <Button
         android:id="@+id/btn_login"
@@ -166,12 +168,9 @@
         android:id="@+id/tv_rodape"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Desenvolvido por DS2M-A"
+        android:text="Desenvolvido por DS2M"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:textColor="@android:color/white"/>
-
-
-
 </RelativeLayout>
