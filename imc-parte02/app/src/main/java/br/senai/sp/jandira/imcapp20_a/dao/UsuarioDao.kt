@@ -8,6 +8,7 @@ import br.senai.sp.jandira.imcapp20_a.R
 import br.senai.sp.jandira.imcapp20_a.model.Usuario
 import br.senai.sp.jandira.imcapp20_a.ui.DashBoardActivity
 import br.senai.sp.jandira.imcapp20_a.ui.LoginActivity
+import br.senai.sp.jandira.imcapp20_a.utils.obterDiferencaEntreDatasEmAnos
 import kotlinx.android.synthetic.main.activity_dash_board.*
 import java.time.LocalDate
 import java.time.Period
@@ -76,6 +77,8 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             val profissaoIndex = cursor.getColumnIndex("profissao")
             val dataNascimentoIndex = cursor.getColumnIndex("data_nascimento")
 
+            val dataNascimento = cursor.getString(dataNascimentoIndex)
+
             // criação/atualização
             //utilizando no restante da aplicação
             val dados = context.getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
@@ -83,7 +86,7 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             editor.putString("nome",cursor.getString(nomeIndex))
             editor.putString("email",cursor.getString(emailIndex))
             editor.putString("profissao",cursor.getString(profissaoIndex))
-            editor.putString("idade",cursor.getString(dataNascimentoIndex))
+            editor.putString("idade", obterDiferencaEntreDatasEmAnos(dataNascimento))
             editor.putInt("peso",0)
             editor.apply()
         }
