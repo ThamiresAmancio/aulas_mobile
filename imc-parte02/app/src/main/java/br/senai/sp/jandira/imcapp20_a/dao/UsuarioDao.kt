@@ -8,6 +8,7 @@ import br.senai.sp.jandira.imcapp20_a.R
 import br.senai.sp.jandira.imcapp20_a.model.Usuario
 import br.senai.sp.jandira.imcapp20_a.ui.DashBoardActivity
 import br.senai.sp.jandira.imcapp20_a.ui.LoginActivity
+import br.senai.sp.jandira.imcapp20_a.utils.converterBitmapParaByteArray
 import br.senai.sp.jandira.imcapp20_a.utils.obterDiferencaEntreDatasEmAnos
 import kotlinx.android.synthetic.main.activity_dash_board.*
 import java.time.LocalDate
@@ -27,14 +28,13 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
         dados.put("altura", usuario.altura)
         dados.put("data_nascimento", usuario.dataNascimento.toString())
         dados.put("sexo", usuario.sexo.toString())
+        dados.put("foto", converterBitmapParaByteArray(usuario.foto))
+
 
         // *** Executar o comando de gravação
         db.insert("tb_usuario", null, dados)
         db.close()
     }
-
-
-
 
 
 
@@ -44,7 +44,7 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
         //**** Determine quais são as colunas da tabela
         //**** que nós queremos no resultado
         //**** Vamos criar uma projeção
-        val campos = arrayOf("email", "senha", "nome", "profissao", "data_nascimento")
+        val campos = arrayOf("email", "senha", "nome", "profissao", "data_nascimento","foto")
         //*** vamos definir p filtro da consulta
         // O que estamos fazendo é construir o filtro
         //  WHERE email = :  AND email = ?
@@ -76,8 +76,8 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             val nomeIndex = cursor.getColumnIndex("nome")
             val profissaoIndex = cursor.getColumnIndex("profissao")
             val dataNascimentoIndex = cursor.getColumnIndex("data_nascimento")
-
             val dataNascimento = cursor.getString(dataNascimentoIndex)
+
 
             // criação/atualização
             //utilizando no restante da aplicação

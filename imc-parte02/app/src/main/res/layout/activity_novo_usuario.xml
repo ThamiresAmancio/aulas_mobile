@@ -10,8 +10,8 @@
         android:id="@+id/cl_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
@@ -26,14 +26,17 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_profile"
+                android:id="@+id/img_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/profile" />
+                app:srcCompat="@drawable/profile"
+                android:scaleType="centerCrop"/>
+
 
         </androidx.cardview.widget.CardView>
 
         <TextView
+            android:id="@+id/tv_trocar_foto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -48,24 +51,27 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+
     <EditText
         android:id="@+id/et_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Nome"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_senha"/>
+        app:layout_constraintTop_toBottomOf="@id/et_senha" />
 
     <EditText
         android:id="@+id/et_profissao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:hint="Profissão"
         android:inputType="textPersonName"
@@ -76,7 +82,7 @@
         android:id="@+id/et_peso"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="Peso"
@@ -88,19 +94,20 @@
         android:id="@+id/et_altura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:ems="10"
         android:hint="Altura"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_peso" />
 
+
     <EditText
         android:id="@+id/et_data_nascimento"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:focusable="false"
         android:hint="Data de Nascimento"
@@ -108,12 +115,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_altura" />
 
-
     <Button
         android:id="@+id/bt_gravar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
         android:text="Gravar"
         app:layout_constraintEnd_toEndOf="@+id/et_data_nascimento"
         app:layout_constraintHorizontal_bias="1.0"
@@ -125,14 +131,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="216dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:hint="E-mail"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="@+id/et_senha"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/cl_header"/>
 
     <EditText
         android:id="@+id/et_senha"
@@ -144,7 +150,36 @@
         android:hint="Senha"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_email"/>
+        app:layout_constraintTop_toBottomOf="@+id/et_email" />
+
+    <TextView
+        android:id="@+id/text_dados_autentificacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/textColor"
+        android:drawableStart="@drawable/ic_lock_24"
+        android:text="Dados de autentificação"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="@+id/et_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_header" />
+
+
+    <TextView
+        android:id="@+id/text_dadosPessoais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="188dp"
+        android:drawableStart="@drawable/ic_person_24"
+        android:text="Dados Pessoais"
+        app:layout_constraintEnd_toEndOf="@+id/et_nome"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cl_header" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

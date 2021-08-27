@@ -33,7 +33,8 @@ class DashBoardActivity : AppCompatActivity() {
         tv_profile_name.text = dados.getString("nome", "")
         tv_profile_occupation.text = dados.getString("profissao", "")
         tv_weight.text = dados.getInt("peso",0).toString()
-        tv_age.text = dados.getString("idade","").toString()
+        tv_age.text = dados.getString("idade","").toString(),
+
 
         // *** Colocar foto do Github no ImageView
         val url = "https://avatars.githubusercontent.com/u/74717575?s=400&u=8ae9370829484ab877487b955d2585b77758563d&v=4"
