@@ -50,9 +50,9 @@ class LoginActivity : AppCompatActivity() {
         var dataInicio = "1986-10-18"
 
 
-        var ano = dataInicio.substring(0,3).toInt()
-        var mes = dataInicio.substring(5,6).toInt()
-        var dia = dataInicio.substring(8,9).toInt()
+        var ano = dataInicio.substring(0,4).toInt()
+        var mes = dataInicio.substring(5,7).toInt()
+        var dia = dataInicio.substring(8,10).toInt()
 
         Log.i("XPTO",ano.toString())
         Log.i("XPTO",mes.toString())

@@ -1,12 +1,15 @@
 package br.senai.sp.jandira.imcapp20_a.ui
 
+import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import br.senai.sp.jandira.imcapp20_a.R
-import com.bumptech.glide.Glide
+import br.senai.sp.jandira.imcapp20_a.utils.converterBase64EmBitmap
 import kotlinx.android.synthetic.main.activity_dash_board.*
+
 
 class DashBoardActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,6 +17,7 @@ class DashBoardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dash_board)
 
         preencherDashBoard()
+        criarDialog()
 
         tv_logout.setOnClickListener {
             val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
@@ -27,18 +31,48 @@ class DashBoardActivity : AppCompatActivity() {
         }
     }
 
+
+    //atributo da classe.
+    private var alerta: AlertDialog? = null
+    private fun criarDialog() {
+        //Cria o gerador do AlertDialog
+        val builder = AlertDialog.Builder(this)
+        //define o titulo
+        builder.setTitle("Preencha algumas informações")
+        //define a mensagem
+        builder.setMessage("Você não terminou o cadastro, deseja continuar ?")
+        //define um botão como positivo
+        builder.setPositiveButton(
+            "Sim"
+        ) { arg0, arg1 ->
+            Toast.makeText(this@DashBoardActivity, "próxima página", Toast.LENGTH_SHORT).show()
+
+        }
+        //define um botão como negativo.
+        builder.setNegativeButton(
+            "Não"
+        ) { arg0, arg1 ->
+            Toast.makeText(this@DashBoardActivity, "Cancelado", Toast.LENGTH_SHORT).show()
+        }
+        //cria o AlertDialog
+        alerta = builder.create()
+        //Exibe
+        builder.show()
+    }
     private fun preencherDashBoard() {
         val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
 
         tv_profile_name.text = dados.getString("nome", "")
         tv_profile_occupation.text = dados.getString("profissao", "")
+
         tv_weight.text = dados.getInt("peso",0).toString()
-        tv_age.text = dados.getString("idade","").toString(),
+        tv_age.text = dados.getString("idade","").toString()
 
+        val imagemBase64 = dados.getString("foto","")
+        val imagemBitmap = converterBase64EmBitmap(imagemBase64)
 
-        // *** Colocar foto do Github no ImageView
-        val url = "https://avatars.githubusercontent.com/u/74717575?s=400&u=8ae9370829484ab877487b955d2585b77758563d&v=4"
-        Glide.with(this).load(url).into(iv_profile)
+        iv_profile.setImageBitmap(imagemBitmap)
 
     }
+
 }

@@ -8,8 +8,7 @@ import br.senai.sp.jandira.imcapp20_a.R
 import br.senai.sp.jandira.imcapp20_a.model.Usuario
 import br.senai.sp.jandira.imcapp20_a.ui.DashBoardActivity
 import br.senai.sp.jandira.imcapp20_a.ui.LoginActivity
-import br.senai.sp.jandira.imcapp20_a.utils.converterBitmapParaByteArray
-import br.senai.sp.jandira.imcapp20_a.utils.obterDiferencaEntreDatasEmAnos
+import br.senai.sp.jandira.imcapp20_a.utils.*
 import kotlinx.android.synthetic.main.activity_dash_board.*
 import java.time.LocalDate
 import java.time.Period
@@ -76,11 +75,13 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             val nomeIndex = cursor.getColumnIndex("nome")
             val profissaoIndex = cursor.getColumnIndex("profissao")
             val dataNascimentoIndex = cursor.getColumnIndex("data_nascimento")
+            val fotoIndex = cursor.getColumnIndex("foto")
             val dataNascimento = cursor.getString(dataNascimentoIndex)
 
 
             // criação/atualização
             //utilizando no restante da aplicação
+            //getColumnINdex pega o index da coluna
             val dados = context.getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
             val editor = dados.edit()
             editor.putString("nome",cursor.getString(nomeIndex))
@@ -88,15 +89,14 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             editor.putString("profissao",cursor.getString(profissaoIndex))
             editor.putString("idade", obterDiferencaEntreDatasEmAnos(dataNascimento))
             editor.putInt("peso",0)
+
+            //converter o byteArray no banco em bitmap
+            var bitmap = converteByteArrayParaBitmap(cursor.getBlob(fotoIndex))
+            editor.putString("foto",converterBitmapParaBase64(bitmap))
             editor.apply()
         }
 
 
-        var hoje:LocalDate = LocalDate.now()
-        var nascimento = LocalDate.of(1974,5,30)
-
-        var idade = Period.between(nascimento,hoje)
-        Log.i("XPTO",idade.years.toString())
 
         db.close()
         return  autenticado
