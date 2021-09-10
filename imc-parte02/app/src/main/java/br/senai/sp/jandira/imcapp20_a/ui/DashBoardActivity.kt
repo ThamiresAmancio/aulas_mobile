@@ -1,12 +1,19 @@
 package br.senai.sp.jandira.imcapp20_a.ui
 
+import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet
 import br.senai.sp.jandira.imcapp20_a.R
+import br.senai.sp.jandira.imcapp20_a.R.id.tv_pesar_agora
+import br.senai.sp.jandira.imcapp20_a.utils.NcdActivity
 import br.senai.sp.jandira.imcapp20_a.utils.converterBase64EmBitmap
 import kotlinx.android.synthetic.main.activity_dash_board.*
 
@@ -17,7 +24,6 @@ class DashBoardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dash_board)
 
         preencherDashBoard()
-        criarDialog()
 
         tv_logout.setOnClickListener {
             val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
@@ -29,6 +35,7 @@ class DashBoardActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
     }
 
 
@@ -73,6 +80,12 @@ class DashBoardActivity : AppCompatActivity() {
 
         iv_profile.setImageBitmap(imagemBitmap)
 
+        if (dados.getInt("peso",0) == 0){
+            criarDialog()
+        }
     }
 
+    private  fun pesarAgora (){
+
+    }
 }

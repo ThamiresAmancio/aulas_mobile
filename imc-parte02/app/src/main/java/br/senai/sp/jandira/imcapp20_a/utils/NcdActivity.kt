@@ -26,7 +26,7 @@ class NcdActivity : AppCompatActivity() {
         spinnerNivelAtividade = findViewById(R.id.spinner_atividades)
         radioFeminino = findViewById(R.id.radio_feminino)
         radioMasculino = findViewById(R.id.radio_masculino)
-        edPeso = findViewById(R.id.ed_peso)
+        edPeso = findViewById(R.id.text_peso)
         buttonNcd = findViewById(R.id.button_calcular_ncd)
         textViewIdade = findViewById(R.id.text_view_idade)
         textViewAtividades = findViewById(R.id.text_view_atividades)

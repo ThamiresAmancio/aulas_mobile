@@ -7,5 +7,5 @@ data class Biometria (
     var peso: Double = 0.0,
     var nivelAtiviade: Int = 0,
     var dataPesagem: LocalDate = LocalDate.now(),
-    var usuario: Usuario
+    var usuario: Usuario? = null
 )
