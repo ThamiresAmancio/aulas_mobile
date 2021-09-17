@@ -10,9 +10,7 @@ import java.util.*
 
 
 class BiometriaDao( val context: Context, val biometria: Biometria) {
-
     val dbHelper = ImcDataBase.getDatabase(context)
-
     public fun gravarBiometria() {
         val db = dbHelper.writableDatabase
         val dados = ContentValues()

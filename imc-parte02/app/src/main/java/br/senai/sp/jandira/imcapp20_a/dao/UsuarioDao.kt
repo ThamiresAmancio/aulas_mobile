@@ -29,12 +29,10 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
         dados.put("sexo", usuario.sexo.toString())
         dados.put("foto", converterBitmapParaByteArray(usuario.foto))
 
-
         // *** Executar o comando de gravação
         db.insert("tb_usuario", null, dados)
         db.close()
     }
-
 
 
     fun autenticar(email:String,senha:String) : Boolean {

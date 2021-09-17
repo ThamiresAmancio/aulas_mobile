@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">IMC - APP - B</string>
+
+    <string-array name="idades">
+        <item>Selecione uma opção</item>
+        <item>Entre 18 e 30 anos</item>
+        <item>Entre 31 e 60 anos</item>
+        <item>Maior do que 60 anos</item>
+    </string-array>
+
+    <string-array name="nivelAtividades">
+        <item>Qual o seu nível de atividade?</item>
+        <item>Atividade Leve</item>
+        <item>Atividade Moderada</item>
+        <item>Atividade Intensa</item>
+    </string-array>
+
+</resources>

@@ -85,7 +85,11 @@ class DashBoardActivity : AppCompatActivity() {
         }
     }
 
+    
     private  fun pesarAgora (){
-
+        tv_pesar_agora.setOnClickListener {
+            val intent = Intent(this, BiometriaActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
