@@ -3,6 +3,7 @@ package br.senai.sp.jandira.imcapp20_a.ui
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -25,6 +26,10 @@ class DashBoardActivity : AppCompatActivity() {
 
         preencherDashBoard()
 
+        tv_pesar_agora.setOnClickListener {
+            abrirPesarAgora()
+        }
+
         tv_logout.setOnClickListener {
             val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
             val editor = dados.edit()
@@ -35,9 +40,7 @@ class DashBoardActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
     }
-
 
     //atributo da classe.
     private var alerta: AlertDialog? = null
@@ -51,23 +54,25 @@ class DashBoardActivity : AppCompatActivity() {
         //define um botão como positivo
         builder.setPositiveButton(
             "Sim"
-        ) { arg0, arg1 ->
-            Toast.makeText(this@DashBoardActivity, "próxima página", Toast.LENGTH_SHORT).show()
-
-        }
+        ) { dialogInterface: DialogInterface, i:Int-> abrirTelaBiometria() }
         //define um botão como negativo.
         builder.setNegativeButton(
             "Não"
-        ) { arg0, arg1 ->
-            Toast.makeText(this@DashBoardActivity, "Cancelado", Toast.LENGTH_SHORT).show()
-        }
+        )
+            { dialogInterface: DialogInterface, i:Int->
+                finish()
+            }
+
         //cria o AlertDialog
         alerta = builder.create()
         //Exibe
         builder.show()
     }
+
+
     private fun preencherDashBoard() {
         val dados = getSharedPreferences("dados_usuario", Context.MODE_PRIVATE)
+        val dadosBiometria  = getSharedPreferences("dados_biometria", Context.MODE_PRIVATE)
 
         tv_profile_name.text = dados.getString("nome", "")
         tv_profile_occupation.text = dados.getString("profissao", "")
@@ -85,11 +90,18 @@ class DashBoardActivity : AppCompatActivity() {
         }
     }
 
-    
-    private  fun pesarAgora (){
-        tv_pesar_agora.setOnClickListener {
-            val intent = Intent(this, BiometriaActivity::class.java)
-            startActivity(intent)
-        }
+    private fun abrirTelaBiometria (){
+        val intent = Intent(this,BiometriaActivity::class.java)
+        startActivity(intent)
+        finish()
     }
+
+    private fun abrirPesarAgora (){
+        val intent = Intent(this,BiometriaActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+
+
 }

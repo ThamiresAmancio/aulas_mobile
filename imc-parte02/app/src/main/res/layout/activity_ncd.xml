@@ -49,57 +49,57 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Peso:"
-                    android:textAppearance="@style/label_dark_background"/>
+                    android:textAppearance="@style/label_dark_background" />
 
                 <EditText
                     android:id="@+id/text_peso"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Qual o seu peso?"
-                    android:background="@drawable/edit_text_background"
-                    android:padding="16dp"
                     android:layout_marginTop="4dp"
-                    android:inputType="number"/>
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Qual o seu peso?"
+                    android:inputType="number"
+                    android:padding="16dp" />
 
                 <TextView
                     android:id="@+id/text_view_idade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="Qual a sua faixa de idade?"
-                    android:textAppearance="@style/label_dark_background"
-                    android:layout_marginTop="16dp" />
+                    android:textAppearance="@style/label_dark_background" />
 
                 <Spinner
                     android:id="@+id/spinner_idade"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/faixa_etaria"
                     android:background="@drawable/edit_text_background"
-                    android:padding="16dp"
-                    />
+                    android:entries="@array/faixa_etaria"
+                    android:padding="16dp" />
 
                 <TextView
                     android:id="@+id/text_view_atividades"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="Qual o nível de atividades diárias?"
-                    android:textAppearance="@style/label_dark_background"
-                    android:layout_marginTop="16dp"/>
+                    android:textAppearance="@style/label_dark_background" />
 
                 <Spinner
                     android:id="@+id/spinner_atividades"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/atividades"
                     android:background="@drawable/edit_text_background"
-                    android:padding="16dp"/>
+                    android:entries="@array/atividades"
+                    android:padding="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     android:text="Escolha o seu sexo:"
-                    android:textAppearance="@style/label_dark_background"
-                    android:layout_marginTop="16dp"/>
+                    android:textAppearance="@style/label_dark_background" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -114,17 +114,17 @@
                             android:id="@+id/radio_feminino"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
                             android:text="Feminino"
-                            android:textColor="@android:color/white"
-                            android:buttonTint="@android:color/white"/>
+                            android:textColor="@android:color/white" />
 
                         <RadioButton
                             android:id="@+id/radio_masculino"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:buttonTint="@android:color/white"
                             android:text="Masculino"
-                            android:textColor="@android:color/white"
-                            android:buttonTint="@android:color/white"/>
+                            android:textColor="@android:color/white" />
 
                     </RadioGroup>
 
@@ -134,11 +134,11 @@
                     android:id="@+id/button_calcular_ncd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Calcular NCD"
                     android:layout_marginTop="24dp"
                     android:layout_marginBottom="48dp"
-                    android:textColor="@android:color/white"
-                    android:background="@drawable/button_background"/>
+                    android:background="@drawable/button_background"
+                    android:text="Calcular NCD"
+                    android:textColor="@android:color/white" />
 
             </LinearLayout>
 

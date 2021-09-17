@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.BiometriaActivity">
 
-    <include layout="@layout/toolbar"/>
+<!--    <include layout="@layout/toolbar"/>-->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/biometria_header"
@@ -58,7 +58,7 @@
 
         <EditText
             android:id="@+id/et_peso"
-            android:layout_width="match_parent"
+            android:layout_width="351dp"
             android:layout_height="wrap_content"
             android:hint="Seu novo peso"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="24dp"
         android:drawablePadding="8dp"
         android:drawableTint="@color/colorAccent"
@@ -87,11 +87,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="8dp"
         android:max="2"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_nivel_atividade" />
 
@@ -108,6 +109,20 @@
         app:layout_constraintEnd_toEndOf="@+id/sb_nivel_atividade"
         app:layout_constraintStart_toStartOf="@+id/sb_nivel_atividade"
         app:layout_constraintTop_toBottomOf="@+id/sb_nivel_atividade" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/et_data_nascimento"-->
+<!--        android:layout_width="356dp"-->
+<!--        android:layout_height="57dp"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:ems="10"-->
+<!--        android:focusable="false"-->
+<!--        android:hint="Data de Pesagem"-->
+<!--        android:inputType="textPersonName"-->
+
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/til_peso" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

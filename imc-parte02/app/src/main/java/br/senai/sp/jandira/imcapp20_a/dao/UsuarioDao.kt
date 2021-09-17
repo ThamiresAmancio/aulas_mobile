@@ -87,13 +87,11 @@ class UsuarioDao(val context: Context, val usuario: Usuario?) {
             editor.putString("profissao",cursor.getString(profissaoIndex))
             editor.putString("idade", obterDiferencaEntreDatasEmAnos(dataNascimento))
             editor.putInt("peso",0)
-
             //converter o byteArray no banco em bitmap
             var bitmap = converteByteArrayParaBitmap(cursor.getBlob(fotoIndex))
             editor.putString("foto",converterBitmapParaBase64(bitmap))
             editor.apply()
         }
-
 
 
         db.close()

@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.SeekBar
+import android.widget.Spinner
 import android.widget.Toast
 import br.senai.sp.jandira.imcapp20_a.model.NivelAtividade
 import br.senai.sp.jandira.imcapp20_a.R

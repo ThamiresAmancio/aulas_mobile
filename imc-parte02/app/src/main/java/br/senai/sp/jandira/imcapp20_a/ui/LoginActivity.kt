@@ -43,6 +43,7 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, NovoUsuarioActivity::class.java)
             startActivity(intent)
         }
+
         btnLogin.setOnClickListener {
             login()
         }

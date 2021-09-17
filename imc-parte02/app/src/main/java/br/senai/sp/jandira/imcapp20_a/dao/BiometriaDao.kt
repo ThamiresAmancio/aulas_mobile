@@ -13,20 +13,20 @@ class BiometriaDao( val context: Context, val biometria: Biometria) {
     val dbHelper = ImcDataBase.getDatabase(context)
     public fun gravarBiometria() {
         val db = dbHelper.writableDatabase
-        val dados = ContentValues()
-           dados.put("id_usuario", biometria.usuario?.id)
-            dados.put("peso", biometria.peso)
-            dados.put("nivelAtiviade", biometria.nivelAtiviade)
-            dados.put("data", getData(LocalDate.now()))
+        val dadosBiometria = ContentValues()
+        dadosBiometria.put("id_usuario", biometria.usuario?.id)
+        dadosBiometria.put("peso", biometria.peso)
+        dadosBiometria.put("nivelAtiviade", biometria.nivelAtiviade)
+//        dadosBiometria.put("data", getData(LocalDate.now()))
 
-           val novoUsuarioDao=  db.insert("tb_biometria", null, dados)
+           val novoUsuarioDao=  db.insert("tb_biometria", null, dadosBiometria)
             db.close()
         }
-            fun getData(data : LocalDate): String {
-                val dataAgora = LocalDate.now()
-                val dataDepois = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-                return  dataAgora.format(dataDepois)
-        }
+//            fun getData(data : LocalDate): String {
+//                val dataAgora = LocalDate.now()
+//                val dataDepois = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+//                return  dataAgora.format(dataDepois)
+//        }
     }
 
 
